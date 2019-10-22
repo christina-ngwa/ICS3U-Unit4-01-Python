@@ -13,16 +13,20 @@ def main():
     print("Find the sum of a number.")
 
     # input
-    some_num = int(input("Enter a positive integer: "))
+    some_num_string = input("Enter a positive integer: ")
     print("")
 
     # process & output
-    while loop_counter <= some_num:
-        print("{0}".format(loop_counter))
-        some_sum = loop_counter + some_sum
-        loop_counter += 1
+    try:
+        some_num = int(some_num_string)
+        while loop_counter <= some_num:
+            print("{0}".format(loop_counter))
+            some_sum = loop_counter + some_sum
+            loop_counter += 1
 
-    print("The sum of your number is {0}.".format(some_sum))
+        print("The sum of your number is {0}.".format(some_sum))
+    except Exception:
+        print("Wrong input. Try again.")
 
 
 if __name__ == "__main__":
